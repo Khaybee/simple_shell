@@ -142,7 +142,7 @@ char *replaced_string(var_list **head, char *str, char *new_str, int new_len)
  *
  * @str: input the string
  * @data: data structure
- * Return: replaced string
+ * Return: replaced string.
  */
 char *replace_var(char *str, runtime_data *data)
 {
