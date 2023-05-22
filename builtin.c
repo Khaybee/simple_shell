@@ -4,7 +4,7 @@
  * _cd - changes the current directory.
  *
  * @data: relevant data
- * Return: relevant data
+ * Return: relevant data.
  */
 
 int _cd(runtime_data *data)
