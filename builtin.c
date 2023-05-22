@@ -7,7 +7,7 @@
  * Return: relevant data
  */
 
-int _cd(rntime_data *data)
+int _cd(runtime_data *data)
 {
 	char *directory;
 	int is_home, is_home1, is_dash;
