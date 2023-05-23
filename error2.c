@@ -24,7 +24,7 @@ char *cd_error(runtime_data *data)
 	}
 
 	len = _strlen(data->arguments[0] + _strlen(data->tokens[0]));
-	len += -strlen(str) + _strlen(msg) + len_id + 5;
+	len += _strlen(str) + _strlen(msg) + len_id + 5;
 	error_checker = malloc(sizeof(char) * (len + 1));
 
 	if (error_checker == 0)

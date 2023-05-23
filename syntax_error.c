@@ -142,7 +142,7 @@ void print_syntax_error(runtime_data *data, char *str, int n, int bol)
 		free(count);
 		return;
 	}
-	_strcpy(error_msg, dat->arguments[0]);
+	_strcpy(error_msg, data->arguments[0]);
 	_strcat(error_msg, ": ");
 	_strcat(error_msg, count);
 	_strcat(error_msg, msg_one);

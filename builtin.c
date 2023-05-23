@@ -12,7 +12,7 @@ int _cd(runtime_data *data)
 	char *directory;
 	int is_home, is_home1, is_dash;
 
-	directory = data->token[1];
+	directory = data->tokens[1];
 
 	if (directory != NULL)
 	{
@@ -44,15 +44,15 @@ int _cd(runtime_data *data)
 }
 
 /**
- * _exit - exits the shell
+ * __exit - exits the shell
  *
  * @data: relevant data (status and tokens)
  * Return: 0 on success
  */
 
-int _exit(runtime_data *data)
+int __exit(runtime_data *data)
 {
-	int large_nnumber, str_len, is_digit;
+	int large_number, str_len, is_digit;
 	unsigned int exit_status;
 
 	if (data->tokens[1] != NULL)
@@ -99,7 +99,7 @@ int _help(runtime_data *data)
 		alias_help();
 	else
 		write(STDERR_FILENO, data->tokens[0],
-				_strlen(data->token[0]));
+				_strlen(data->tokens[0]));
 	data->status = 0;
 	return (1);
 }

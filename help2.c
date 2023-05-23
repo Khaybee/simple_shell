@@ -41,6 +41,6 @@ void alias_help(void)
 	char *str = "alias: alias [-p] [name[=value]...]\n";
 
 	write(STDOUT_FILENO, str, _strlen(str));
-	str = '\tDefine or display aliases.\n ";
+	str = "\tDefine or display aliases.\n ";
 	write(STDOUT_FILENO, str, _strlen(str));
 }

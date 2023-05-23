@@ -22,10 +22,10 @@ char *swap_char(char *str, int n)
 					x++;
 			}
 
-			if (atr[x] ==  '&')
+			if (str[x] ==  '&')
 			{
 				if (str[x + 1] != '&')
-					str[x] == 12;
+					str[x] = 12;
 				else
 					x++;
 			}
@@ -103,7 +103,7 @@ void _next(separator_list **list_sep, cmd_list **list_ln, runtime_data *data)
 		{
 			if (separator->sep == '|' || separator->sep == ';')
 				loop_sep = 0;
-			if (seperator->sep == '&')
+			if (separator->sep == '&')
 				line = line->next, separator = separator->next;
 		}
 		if (separator != NULL && !loop_sep)
@@ -178,7 +178,7 @@ char **tokenize(char *str)
 		exit(EXIT_FAILURE);
 	}
 	token = _strtok(str, TOK_DELIM);
-	tokens[0] = toekn;
+	tokens[0] = token;
 	for (x = 1; token != NULL; x++)
 	{
 		if (x == buffer_size)
@@ -191,7 +191,7 @@ char **tokenize(char *str)
 				exit(EXIT_FAILURE);
 			}
 		}
-		tokens = _strtok(NULL, TOKEN_DELIM);
+		token = _strtok(NULL, TOK_DELIM);
 		tokens[x] = token;
 	}
 	return (tokens);

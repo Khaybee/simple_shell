@@ -1,4 +1,4 @@
-#include "amin.h"
+#include "main.h"
 /**
  * comment_out - removes comments from input
  * @str: input string

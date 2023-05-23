@@ -17,7 +17,7 @@
 #define TOK_DELIM " \t\r\n\a"
 #define PATH_MAX 4096
 
-extern chae **environ;
+extern char **environ;
 
 /**
  * struct shell_data - single lined list
@@ -34,7 +34,7 @@ typedef struct shell_data
 {
 	char **arguments;
 	char *input;
-	char *tokens;
+	char **tokens;
 	int status;
 	int lineCounter;
 	char **_env;
@@ -92,7 +92,7 @@ typedef struct builtin
 /* shell_loop.c */
 void shell_loop(runtime_data *data);
 char *read_line(int *file);
-char comment_out(char *str);
+char *comment_out(char *str);
 
 /* signal.c */
 void get_sigint(int signal);
@@ -113,8 +113,8 @@ char *_strcpy(char *newstr, char *str);
 char *_strchr(char *str, char c);
 int _strspn(char *str, char *s);
 int _strcmp(char *str1, char *str2);
-int _isdigit(const chr *str);
-void re_Str(char *str);
+int _isdigit(const char *str);
+void rev_str(char *str);
 
 /* string3.c */
 int _atoi(char *str);
@@ -127,7 +127,7 @@ int _charscmp(char str[], const char *delimiter);
 int char_dup(char *str, int n);
 int find_syntax_error(char *str, int i, char last_char);
 int first_char(char *str, int *n);
-int syntax_error(runtim_data *data, char *str);
+int syntax_error(runtime_data *data, char *str);
 void print_syntax_error(runtime_data *data, char *str, int n, int bol);
 
 /* env_vars.c */
@@ -138,7 +138,7 @@ char *replace_var(char *str, runtime_data *data);
 
 /* list1.c */
 var_list *add_var_node(var_list **head, int len_var, char *val, int len_val);
-void free_var_list(va_list **head);
+void free_var_list(var_list **head);
 
 /* tokenizer.c */
 char *swap_char(char *str, int n);
@@ -176,15 +176,15 @@ char *cd_error(runtime_data *data);
 char *strcat_cd(runtime_data *data, char *msg, char *error_checker, char *str);
 
 /* environ1.c */
-int cmp_env_var(const char *env_name. const char *str);
+int cmp_env_var(const char *env_name, const char *str);
 char *_getenv(const char *str, char **_environ);
 int _env(runtime_data *data);
 
 /* environ2.c */
 char *copy_data(char *env_name, char *env_val);
-void set_env(char *name, char *env_val, runtimed_data *data);
+void set_env(char *name, char *env_val, runtime_data *data);
 int _setenv(runtime_data *data);
-itn _unsetenv(runtime_data *data);
+int _unsetenv(runtime_data *data);
 
 /* cd_handler.c */
 void cd_parent(runtime_data *data);

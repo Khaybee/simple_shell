@@ -1,4 +1,4 @@
-#include "mian.h"
+#include "main.h"
 
 /**
  * cmp_env_var - compares env variables names with the name passed.
@@ -62,7 +62,7 @@ int _env(runtime_data *data)
 
 	for (a = 0; data->_env[a]; a++)
 	{
-		for (b = 0; dara->_env[a][b]; b++)
+		for (b = 0; data->_env[a][b]; b++)
 			;
 
 		write(STDOUT_FILENO, data->_env[a], b);

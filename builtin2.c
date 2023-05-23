@@ -40,7 +40,7 @@ void set_env(char *name, char *env_val, runtime_data *data)
 	int num;
 	char *env_var, *env_name;
 
-	for (num 0; data->_env[num]; num++)
+	for (num = 0; data->_env[num]; num++)
 	{
 		env_var = _strdup(data->_env[num]);
 		env_name = _strtok(env_var, "=");
@@ -72,7 +72,7 @@ int _setenv(runtime_data *data)
 		get_error(data, -1);
 		return (1);
 	}
-	set_env(data->tokens[1], data->tokens[2], dta);
+	set_env(data->tokens[1], data->tokens[2], data);
 
 	return (1);
 }
@@ -117,7 +117,7 @@ int _unsetenv(runtime_data *data)
 	{
 		if (x != z)
 		{
-			mem_env[y] = dta->_env[x];
+			mem_env[y] = data->_env[x];
 			y++;
 		}
 	}
