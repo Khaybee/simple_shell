@@ -4,27 +4,27 @@
  * assign_line - assigns the line var for the get_line
  * @lineptr: Buffer that store input str
  * @str: str which is being called to line
- * @line_size: size of the line
+ * @ln_size: size of the line
  * @buf_size: size of the buffer
  */
 
-void assign_line(char **lineptr, size_t *line_size, char *str, size_t buf_size)
+void assign_line(char **lineptr, size_t *ln_size, char *str, size_t buf_size)
 {
 	if (*lineptr == NULL)
 	{
 		if (buf_size > BUFSIZE)
-		*line_size = buf_size;
+		*ln_size = buf_size;
 
 		else
-			*line_size = BUFSIZE;
+			*ln_size = BUFSIZE;
 		*lineptr = str;
 	}
-	else if (*line_size < buf_size)
+	else if (*ln_size < buf_size)
 	{
 		if (buf_size > BUFSIZE)
-			*line_size = buf_size;
+			*ln_size = buf_size;
 		else
-			*line_size = BUFSIZE;
+			*ln_size = BUFSIZE;
 		*lineptr = str;
 	}
 	else

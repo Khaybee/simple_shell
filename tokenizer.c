@@ -77,10 +77,10 @@ void add_node(separator_list **head_sep, cmd_list **head_line, char *str)
 /**
  * _next - go to next command line
  * @list_sep: separator list
- * @list_line: command line list
+ * @list_ln: command line list
  * @data: data structure
  */
-void _next(separator_list **list_sep, cmd_list **list_line, runtime_data *data)
+void _next(separator_list **list_sep, cmd_list **list_ln, runtime_data *data)
 {
 	int loop_sep;
 	separator_list *separator;
@@ -88,7 +88,7 @@ void _next(separator_list **list_sep, cmd_list **list_line, runtime_data *data)
 
 	loop_sep = 1;
 	separator = *list_sep;
-	line = *list_line;
+	line = *list_ln;
 
 	while (separator != NULL && loop_sep)
 	{
@@ -111,7 +111,7 @@ void _next(separator_list **list_sep, cmd_list **list_line, runtime_data *data)
 	}
 
 	*list_sep = separator;
-	*list_line = line;
+	*list_ln = line;
 }
 
 /**
@@ -176,7 +176,7 @@ char **tokenize(char *str)
 	{
 		write(STDERR_FILENO, ": allocation error\n", 18);
 		exit(EXIT_FAILURE);
-	}	
+	}
 	token = _strtok(str, TOK_DELIM);
 	tokens[0] = toekn;
 	for (x = 1; token != NULL; x++)
