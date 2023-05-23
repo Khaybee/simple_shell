@@ -4,7 +4,7 @@
  * assign_line - assigns the line var for the get_line
  * @lineptr: Buffer that store input str
  * @str: str which is being called to line
- * @ln_size: size of the line
+ * @ln_size: size of the line.
  * @buf_size: size of the buffer
  */
 

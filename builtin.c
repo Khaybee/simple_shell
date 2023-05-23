@@ -3,7 +3,8 @@
 /**
  * _cd - changes the current directory.
  *
- * @data: relevant data
+ * @data: relevant data.
+ *
  * Return: relevant data.
  */
 

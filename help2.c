@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * help - help information for builting str
+ * help - help information for builting str.
  * Return: Nothing
  */
 

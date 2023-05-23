@@ -53,7 +53,7 @@ char *_getenv(const char *str, char **_environ)
  * _env - prints the environment variables
  *
  * @data: data relevant
- * Return: 1 0n success
+ * Return: 1 0n success.
  */
 
 int _env(runtime_data *data)

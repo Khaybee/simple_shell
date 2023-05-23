@@ -46,7 +46,7 @@ char *cd_error(runtime_data *data)
  * @msg: msg to be print
  * @error_checker: output for msg
  * @str: counter lines
- * Return: error of msg
+ * Return: error of msg.
  */
 char *strcat_cd(runtime_data *data, char *msg, char *error_checker, char *str)
 {

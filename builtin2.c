@@ -79,7 +79,7 @@ int _setenv(runtime_data *data)
 
 /**
  * _unsetenv - dletes an environment variable
- * @data: data relevant (env name)
+ * @data: data relevant (env name).
  *
  * Return: 1 on success.
  */
