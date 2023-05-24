@@ -64,7 +64,6 @@ int search_vars(var_list **head, char *str, char *status, runtime_data *data)
 		{
 			if (str[x + 1] == '?')
 			{
-				write(STDOUT_FILENO, "0", 1);
 				add_var_node(head, 2, status, list), x++;
 			}
 			else if (str[x + 1] == '$')
