@@ -40,26 +40,40 @@ char *int_to_string(int num)
 		sign = 1;
 		n = -n;
 	}
-	while (num != 0)
+	if (n == 0)
 	{
-		len++;
-		num /= 10;
+		len = 1;
+	}
+	else
+	{
+		while (n != 0)
+		{
+			len++;
+			n /= 10;
+		}
 	}
 	if (sign)
 		len++;
 	str = (char *)malloc((len + 1) * sizeof(char));
+
 	i = len - 1;
-	while (n != 0)
+	if (num == 0)
 	{
-		str[i] = '0' + (n % 10);
-		n /= 10;
-		i--;
+		str[i--] = '0';
+	}
+	else
+	{
+		while (num != 0)
+		{
+			str[i--] = '0' + (num % 10);
+			num /= 10;
+		}
 	}
 	if (sign)
-		str[0] = '-';
-	str[len] = '\0';
+		str[i] = '-';
+	str[len] =  '\0';
+	
 	return (str);
-
 }
 
 /**

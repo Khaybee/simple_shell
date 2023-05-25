@@ -16,8 +16,14 @@ var_list *add_var_node(var_list **head, int len_var, char *val, int len_val)
 	if (new == NULL)
 		return (NULL);
 	new->var_len = len_var;
-	new->value = val;
-	new->len_value = len_val;
+	new->value = NULL;
+	new->len_value = 0;
+
+	if (val != NULL && len_val > 0)
+	{
+		new->value = _strdup(val);
+		new->len_value = len_val;
+	}
 
 	new->next = NULL;
 	temp = *head;
